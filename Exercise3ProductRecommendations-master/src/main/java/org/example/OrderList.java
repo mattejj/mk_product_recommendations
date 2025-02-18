@@ -28,9 +28,7 @@ public class OrderList {
 
         //foreach order get product names and add them to counters of (non)existent entries
         for (Order order : orderList) {
-            var productInList = order.getProductList();
             for (String productIn : order.getProductList()) {
-//            for (String productIn : productInList) {
                 //check if product is in the new tuple
                 boolean productExists = false;
                 for (int i = 0; i < productSum.size(); i++) {
