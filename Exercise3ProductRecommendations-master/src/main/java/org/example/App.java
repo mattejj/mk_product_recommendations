@@ -32,9 +32,7 @@ public class App {
 
             BufferedReader reader = new BufferedReader(new FileReader(fileLocation + filename));
             while ((line = reader.readLine()) != null) {
-                // is order
                 Order orderNew = new Order();
-
 
                 if (Character.isDigit(line.charAt(0))) {
                     // parse product in class object
@@ -84,10 +82,14 @@ public class App {
                                 break;
                         }
                     }
+                    orderList.add(orderNew);
                 }
             }
 
+            OrderList.ProductSum(orderList);
+
             reader.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

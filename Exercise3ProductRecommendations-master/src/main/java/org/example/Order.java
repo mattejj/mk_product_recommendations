@@ -41,7 +41,7 @@ public class Order {
                 return;
             }
 
-            int nextDash = s.indexOf("|");
+            int nextDash = s.indexOf(",");
 
             if (nextDash > 0) {
                 String tempS = s.substring(0, nextDash);
