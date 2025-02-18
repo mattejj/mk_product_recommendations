@@ -86,7 +86,7 @@ public class App {
                 }
             }
 
-            OrderList.ProductSum(orderList);
+            OrderList.ProductSum(orderList, threshold);
 
             reader.close();
 

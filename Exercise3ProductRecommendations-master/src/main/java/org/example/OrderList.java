@@ -23,7 +23,7 @@ public class OrderList {
 
     //compare products and sum them
     // aka: [name, count]
-    public static List<Pair<String, Integer>> ProductSum(List<Order> orderList) {
+    public static List<Pair<String, Integer>> ProductSum(List<Order> orderList, int threshold) {
         List<Pair<String, Integer>> productSum = new ArrayList<>();
 
         //foreach order get product names and add them to counters of (non)existent entries
@@ -41,6 +41,13 @@ public class OrderList {
                 if (!productExists) {
                     productSum.add(new Pair<>(productIn, 1));
                 }
+            }
+        }
+
+        for(int i = 0; i < productSum.size(); i++){
+            if(productSum.get(i).getValue1() < threshold){
+                productSum.remove(i);
+                i--;
             }
         }
 
